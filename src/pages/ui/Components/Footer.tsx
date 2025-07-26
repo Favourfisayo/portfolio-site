@@ -1,6 +1,6 @@
 import { outfit } from "@/pages/fonts"
-import { Mail, Phone } from "lucide-react"
-import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"
+import {Phone } from "lucide-react"
+import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa"
 import Link from "next/link"
 import { motion } from "framer-motion"
 

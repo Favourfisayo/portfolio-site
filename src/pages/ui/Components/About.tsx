@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { outfit, ovo } from "../../fonts"
 import {motion} from "framer-motion"
 import {
@@ -149,7 +148,7 @@ const About = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        I’m an aspiring Software Engineer and a student at Bells University, Ota, Ogun State, Nigeria. I'm currently focused on improving my problem-solving skills 
+        I am an aspiring Software Engineer and a student at Bells University, Ota, Ogun State, Nigeria. I am  currently focused on improving my problem-solving skills 
         by practicing Data Structures and Algorithms and grinding through LeetCode challenges. 
         My goal is to grow into a well-rounded developer who can build impactful, scalable software
     </motion.p>
@@ -189,7 +188,7 @@ const About = () => {
       >
             <div>
             <h2 className="font-semibold text-xl text-[#868686]">Skills i have</h2>
-            <p>Technologies and tools I've worked with and enjoy using.</p>
+            <p>Technologies and tools I have worked with and enjoy using.</p>
             </div>
             <div className="flex flex-col w-full gap-5">
               {tools.map((tool, index) => 

@@ -1,8 +1,5 @@
-import Button from "../Button";
-import Image from "next/image";
 import { ovo } from "../../fonts";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
 
 const Main = () => {
 
@@ -31,7 +28,7 @@ const Main = () => {
         </div>
 
         <h3 className="text-center leading-8  text-[#242424] text-4xl font-extrabold lg:text-6xl">
-          Hi! I'm Seriki Favour.
+          Hi! I&apos;m Seriki Favour.
         </h3>
         </motion.div>
 

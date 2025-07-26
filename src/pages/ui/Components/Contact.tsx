@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, User, MessageSquare, Circle } from "lucide-react"
+import { ArrowRight, Mail, User, MessageSquare } from "lucide-react"
 import { ovo, outfit } from "../../fonts"
 import toast from "react-hot-toast"
 import { handleSubmit } from "@/pages/utils/handleSubmit"
@@ -20,6 +20,7 @@ const Contact = () => {
       }
     } catch (error) {
       toast.error("Failed to send message :(")
+      console.error(error)
       e.currentTarget.reset()
     } finally {
       setLoading(false)
@@ -79,7 +80,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          I'd love to hear from you! If you have any questions, comments or <br className="hidden md:block" />
+          I would love to hear from you! If you have any questions, comments or <br className="hidden md:block" />
           feedback, please use the form below.
         </motion.p>
       </motion.div>

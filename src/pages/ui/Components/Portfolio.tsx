@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { ovo, outfit } from '../../fonts'
 import Button from '../Button'
 import { ArrowRight, Github, ExternalLink } from 'lucide-react'
@@ -9,12 +8,7 @@ import {
   SiSupabase, 
   SiTypescript, 
   SiTailwindcss, 
-  SiOpenai, 
   SiReactrouter,
-  SiNodedotjs,
-  SiPython,
-  SiHtml5,
-  SiCss3,
   SiFigma,
   SiFramer
 } from "react-icons/si"

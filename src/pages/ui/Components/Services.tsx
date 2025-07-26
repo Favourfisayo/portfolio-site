@@ -1,7 +1,6 @@
 import { ovo, outfit } from '../../fonts'
-import Button from "../Button"
 import {motion, AnimatePresence} from "framer-motion"
-import {Globe, Server, BookText, Rocket, ArrowDown, ArrowUp} from "lucide-react"
+import {Globe, Server, BookText, Rocket, ArrowDown} from "lucide-react"
 import { useState } from "react"
 
 const Services = () => {
