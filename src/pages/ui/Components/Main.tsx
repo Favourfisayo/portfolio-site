@@ -1,4 +1,4 @@
-import { ovo } from "../../fonts";
+import { ovo } from "@/fonts";
 import { motion } from "framer-motion";
 
 const Main = () => {

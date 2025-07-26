@@ -59,7 +59,7 @@ const Button = ({
       >
         {text}
       </span>
-      <Icon {...iconProps}/>
+     {Icon && <Icon {...iconProps}/>}
     </button>
     </Link>
   )

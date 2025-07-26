@@ -1,4 +1,4 @@
-import { outfit, ovo } from "../../fonts"
+import { outfit, ovo } from "@/fonts"
 import {motion} from "framer-motion"
 import {
 siHtml5, siCss, siTypescript, siJavascript,

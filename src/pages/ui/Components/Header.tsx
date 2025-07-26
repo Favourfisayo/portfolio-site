@@ -1,6 +1,6 @@
 "use client";
-import { outfit, ovo } from "../../fonts";
-import Button from "../Button";
+import { outfit, ovo } from "@/fonts";
+import Button from "@/Button";
 import { useState } from "react";
 import { Menu, X,  ArrowRight } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";

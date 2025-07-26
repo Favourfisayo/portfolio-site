@@ -1,4 +1,4 @@
-import { outfit } from "@/pages/fonts"
+import { outfit } from "@/fonts"
 import {Phone } from "lucide-react"
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa"
 import Link from "next/link"

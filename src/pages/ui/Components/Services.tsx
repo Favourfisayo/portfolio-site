@@ -1,4 +1,4 @@
-import { ovo, outfit } from '../../fonts'
+import { ovo, outfit } from '@/fonts'
 import {motion, AnimatePresence} from "framer-motion"
 import {Globe, Server, BookText, Rocket, ArrowDown} from "lucide-react"
 import { useState } from "react"

@@ -1,5 +1,5 @@
-import { ovo, outfit } from '../../fonts'
-import Button from '../Button'
+import { ovo, outfit } from '@/fonts'
+import Button from '@/Button'
 import { ArrowRight, Github, ExternalLink } from 'lucide-react'
 import {motion} from "framer-motion"
 import { 

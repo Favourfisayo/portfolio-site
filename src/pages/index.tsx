@@ -1,4 +1,3 @@
-import '@/styles/globals.css'
 import Header from './ui/Components/Header';
 import Main from './ui/Components/Main';
 import About from './ui/Components/About';
