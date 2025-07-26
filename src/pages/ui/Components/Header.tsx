@@ -2,10 +2,10 @@
 import { outfit, ovo } from "@/fonts";
 import Button from "@/Button";
 import { useState } from "react";
-import { Menu, X,  ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Home, User, Briefcase, FolderOpen, Mail, MoreHorizontal } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
-// import { useTheme } from "next-themes";
-import { motion,  Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
 const headerVariants: Variants = {
   hidden: { opacity: 0, y: -20 },
   visible: { 
@@ -44,23 +44,6 @@ const navVariants: Variants = {
   }
 };
 
-const menuItemVariants: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: -20,
-    x: -10
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    x: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut"
-    }
-  }
-};
-
 const buttonVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: {
@@ -76,28 +59,18 @@ const buttonVariants: Variants = {
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // const { theme, setTheme } = useTheme();
-  // const [mounted, setMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // const toggleTheme = () => {
-  //   setTheme(theme === "dark" ? "light" : "dark");
-  // };
-
   const navLinks = [
-    { linkName: "Home", href: "#home" },
-    { linkName: "About me", href: "#about" },
-    { linkName: "Services", href: "#services" },
-    { linkName: "Portfolio", href: "#portfolio" },
-    { linkName: "Contact", href: "#contact" },
-    { linkName: "Others", href: "#others" },
+    { linkName: "Home", href: "#home", icon: Home },
+    { linkName: "About me", href: "#about", icon: User },
+    { linkName: "Services", href: "#services", icon: Briefcase },
+    { linkName: "Portfolio", href: "#portfolio", icon: FolderOpen },
+    { linkName: "Contact", href: "#contact", icon: Mail },
+    { linkName: "Others", href: "#others", icon: MoreHorizontal },
   ];
 
   return (
@@ -113,8 +86,8 @@ export default function Header() {
           variants={logoVariants}
         >
           FAVOUR
-          <span className="w-2.5 h-2.5 relative  bg-[#EC1552]  rounded-full self-end">
-           <span className="w-2.5 h-2.5 absolute animate-ping bg-[#EC1552] top-0 left-0 right-0 bottom-0  rounded-full self-end">
+          <span className="w-2.5 h-2.5 relative bg-[#EC1552] rounded-full self-end">
+           <span className="w-2.5 h-2.5 absolute animate-ping bg-[#EC1552] top-0 left-0 right-0 bottom-0 rounded-full self-end">
           </span>
           </span>
         </motion.h1>
@@ -156,15 +129,6 @@ export default function Header() {
           </button>
 
           <div className="hidden lg:flex items-center gap-4">
-            {/* {mounted && (
-              <button onClick={toggleTheme} aria-label="Toggle Theme">
-                {theme === "dark" ? (
-                  <Sun size={30} strokeWidth={1} className="cursor-pointer" />
-                ) : (
-                  <Moon size={30} strokeWidth={1} className="cursor-pointer" />
-                )}
-              </button>
-            )} */}
               <Button
                 text="Connect"
                 textColor="#4D4D4D"
@@ -187,94 +151,68 @@ export default function Header() {
       </motion.header>
 
         {isMobileMenuOpen && (
-          <motion.header
-            className="lg:hidden fixed inset-0 bg-black/20 z-40"
-            onClick={toggleMobileMenu}
-          >
-            <motion.div
-              className={`${ovo.className} fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-xl border-b border-white/10 transform transition-all duration-500 ease-out z-50 max-h-[75vh] overflow-y-auto`}
+          <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={toggleMobileMenu}>
+            <div
+              className={`${ovo.className} fixed top-0 left-0 right-0 bg-white shadow-lg z-50`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-8">
-                <motion.div 
-                  className="flex justify-between items-center mb-10"
-                >
-                  <h2 className="text-2xl font-light text-white">Menu</h2>
+              <div className="px-6 py-4 border-b border-gray-100">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-xl font-medium text-[#1E1E1E]">Menu</h2>
                   <button
                     onClick={toggleMobileMenu}
-                    className="p-3 text-white/80 hover:text-white transition-all duration-300 hover:scale-110"
+                    className="p-2 text-gray-500 hover:text-[#EC1552] transition-colors rounded-lg hover:bg-gray-50"
                     aria-label="Close menu"
                   >
-                    <X size={22} />
+                    <X size={20} />
                   </button>
-                </motion.div>
-
-                <nav className="space-y-2">
-                  {navLinks.map((link, index) => (
-                    <motion.a
-                      key={index}
-                      href={link.href}
-                      className="group cursor-pointer py-4 px-6 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-white/20"
-                      variants={menuItemVariants}
-                    >
-                      <span className="text-white/90 group-hover:text-white text-lg font-light tracking-wide transition-all duration-300">
-                        {link.linkName}
-                      </span>
-                    </motion.a>
-                  ))}
-                </nav>
-
-                <motion.div 
-                  className="mt-12 pt-8 border-t border-white/10"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  <div className="flex flex-col gap-6">
-                    {/* {mounted && (
-                      <button
-                        onClick={toggleTheme}
-                        className="flex items-center gap-4 py-3 px-6 rounded-2xl hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                      >
-                        {theme === "dark" ? (
-                          <Sun size={30} strokeWidth={1} color="white" />
-                        ) : (
-                          <Moon size={30} strokeWidth={1} color="white" />
-                        )}
-                        <span className="text-white/90 text-base font-light">
-                          {theme === "dark" ? "Light Mode" : "Dark Mode"}
-                        </span>
-                      </button>
-                    )} */}
-
-                    <div className="px-6">
-                      <Button
-                        text="Connect "
-                        textColor="#FFFFFF"
-                        icon={ArrowRight}
-                        iconProps={{
-                          size: 20,
-                          strokeWidth: 1,
-                          color: "white",
-                        }}
-                        btnHeight="56px"
-                        btnRadius="28px"
-                        bgColor="rgba(255, 255, 255, 0.15)"
-                        borderColor="rgba(255, 255, 255, 0.2)"
-                        hover={[
-                          "scale-105",
-                          "shadow-2xl",
-                          "bg-white/25",
-                          "border-white/30",
-                        ]}
-                        href={"https://linkedin.com/in/favour-seriki-631151286"}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
-          </motion.header>
+
+              <nav className="py-2">
+                <ul className="divide-y divide-gray-50">
+                  {navLinks.map((link, index) => {
+                    const IconComponent = link.icon;
+                    return (
+                      <li key={index}>
+                        <a
+                          href={link.href}
+                          className="flex items-center gap-4 px-6 py-4 text-gray-700 hover:text-[#EC1552] hover:bg-gray-50 transition-all duration-200 active:bg-gray-100"
+                          onClick={toggleMobileMenu}
+                        >
+                          <IconComponent size={20} strokeWidth={1.5} />
+                          <span className="text-base font-normal">{link.linkName}</span>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+
+              <div className="p-6 border-t border-gray-100 bg-gray-50/50">
+                <Button
+                  text="Connect"
+                  textColor="#FFFFFF"
+                  icon={ArrowRight}
+                  iconProps={{
+                    size: 18,
+                    strokeWidth: 2,
+                    color: "white",
+                  }}
+                  btnHeight="48px"
+                  btnRadius="12px"
+                  bgColor="#EC1552"
+                  borderColor="#EC1552"
+                  hover={[
+                    "scale-105",
+                    "shadow-lg",
+                    "bg-[#d11347]",
+                  ]}
+                  href={"https://linkedin.com/in/favour-seriki-631151286"}
+                />
+              </div>
+            </div>
+          </div>
         )}
     </>
   );
