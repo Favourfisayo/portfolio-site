@@ -210,16 +210,17 @@ export default function Header() {
                 </motion.div>
 
                 <nav className="space-y-2">
-                  {navLinks.map((item, index) => (
-                    <motion.div
+                  {navLinks.map((link, index) => (
+                    <motion.a
                       key={index}
+                      href={link.href}
                       className="group cursor-pointer py-4 px-6 rounded-2xl hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-white/20"
                       variants={menuItemVariants}
                     >
                       <span className="text-white/90 group-hover:text-white text-lg font-light tracking-wide transition-all duration-300">
-                        {item.linkName}
+                        {link.linkName}
                       </span>
-                    </motion.div>
+                    </motion.a>
                   ))}
                 </nav>
 
