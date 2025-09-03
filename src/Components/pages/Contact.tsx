@@ -1,94 +1,25 @@
 import { ArrowRight, Mail, User, MessageSquare } from "lucide-react"
 import { ovo, outfit } from "@/fonts"
-import toast from "react-hot-toast"
-import { handleSubmit } from "@/utils/handleSubmit"
 import { useState } from "react"
 import { BeatLoader } from "react-spinners"
 import { motion } from "framer-motion"
-
+import { containerVariants, itemVariants } from "@/data/contact/variants"
+import Header from "@/Components/Contact/Header"
+import { emailSubmitHandler } from "@/controls/contact/handleSubmit"
 const Contact = () => {
   const [loading, setLoading] = useState(false)
   const [focusedField, setFocusedField] = useState<string | null>(null)
-  
-  const submitFunction = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      const res = await handleSubmit(e)
-      if(res && res.ok) {
-        toast.success("Message sent successfully, I'll get back soon :)")
-      }
-    } catch (error) {
-      toast.error("Failed to send message :(")
-      console.error(error)
-      e.currentTarget.reset()
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
-  }
 
   return (
     <section
-      className={`${ovo.className} flex flex-col items-center gap-10 px-4 py-12 bg-cover bg-center`}
-      style={{ backgroundImage: "url(/contact-bg.png)" }}
+      className={`${ovo.className} flex flex-col items-center gap-10 px-4 py-12`}
       id="contact"
     >
-      <motion.div 
-        className="flex flex-col items-center gap-4 text-center max-w-[90%] md:max-w-2xl"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <motion.h4 
-          className="text-xl sm:text-2xl text-[#242424]"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          Connect with me
-        </motion.h4>
-        <motion.h1 
-          className="text-4xl sm:text-6xl text-[#242424] leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          Get in touch
-        </motion.h1>
-        <motion.p 
-          className="text-[#565656] text-base sm:text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          I would love to hear from you! If you have any questions, comments or <br className="hidden md:block" />
-          feedback, please use the form below.
-        </motion.p>
-      </motion.div>
-
+      <Header/>
       <motion.form
         className={`${outfit.className} flex flex-col items-center gap-8 w-full max-w-[727px]`}
         aria-label="Contact form"
-        onSubmit={(e) => submitFunction(e)}
+        onSubmit={(e) => emailSubmitHandler(e, setLoading)}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -108,7 +39,7 @@ const Contact = () => {
           >
             <label htmlFor="name" className="sr-only">Name</label>
             <motion.span 
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-[#B3B3B3]"
+              className="absolute left-4 top-1/2 -translate-y-1/2 "
               animate={{ 
                 color: focusedField === 'name' ? '#EC1552' : '#B3B3B3',
                 scale: focusedField === 'name' ? 1.1 : 1
@@ -120,7 +51,7 @@ const Contact = () => {
             <motion.input
               id="name"
               name="name"
-              className="w-full md:w-[348px] h-[56px] bg-white border border-[#A4A4A4] rounded-lg text-base sm:text-lg text-[#242424] pl-11 pr-4 transition-all duration-300 focus:outline-none focus:border-0 focus:ring-2 focus:ring-[#ffb4c9] hover:shadow-sm"
+              className="w-full md:w-[348px] h-[56px] bg-white border  rounded-lg text-base sm:text-lg text-[#242424] pl-11 pr-4 transition-all duration-300 focus:outline-none focus:border-0 focus:ring-2 focus:ring-[#ffb4c9] hover:shadow-sm"
               type="text"
               placeholder="Enter your name"
               autoComplete="name"
@@ -212,11 +143,11 @@ const Contact = () => {
           <button
             type="submit"
             aria-label="Send Mail"
-            className="flex items-center justify-center gap-2 w-full md:w-auto h-[64px] px-8 rounded-[50px] bg-[#202020] border border-[#202020] text-white text-lg font-medium transition-all duration-200 hover:bg-[#111] hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#ffb4c9]"
+            className="flex items-center justify-center gap-2 w-full md:w-auto h-[64px] px-8 rounded-[50px] border text-lg font-medium transition-all duration-200 hover:scale-105  focus:outline-none focus:ring-2 focus:ring-[#ffb4c9]"
           >
             
-           {loading ? <BeatLoader color="#d1ff4a"/> : "Send Mail"}
-            <ArrowRight size={20} strokeWidth={1} color="white" />
+           {loading ? <BeatLoader color="#ffb4c9"/> : "Send Mail"}
+            <ArrowRight size={20} strokeWidth={1} />
           </button>
         </motion.div>
       </motion.form>
