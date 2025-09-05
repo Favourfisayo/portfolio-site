@@ -5,7 +5,7 @@ import clsx from "clsx"
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 
-export default function Porject({project, index}: {
+export default function Project({project, index}: {
     project: PortfolioProject,
     index: number
 }) {
@@ -77,7 +77,7 @@ export default function Porject({project, index}: {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 1.1 }}
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-8 h-8 bg-white/90 hover:bg-white rounded-full shadow transition"
+                  className="flex items-center justify-center w-8 h-8 border text-white rounded-full shadow transition"
                   aria-label="GitHub Repository"
                 >
                   <Github size={16} />
@@ -88,7 +88,7 @@ export default function Porject({project, index}: {
                   whileTap={{ scale: 1.1 }}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-8 h-8 bg-[#e0ff85] hover:bg-[#d1ff4a] rounded-full shadow transition"
+                  className="flex items-center justify-center w-8 h-8 text-white border rounded-full shadow transition"
                   aria-label="Live Demo"
                 >
                   <ExternalLink size={16} />

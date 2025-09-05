@@ -19,7 +19,7 @@ export default function ThemeToggle() {
         <button
           aria-label="Use light theme"
           onClick={() => setTheme("light")}
-          className={`p-2 rounded-full transition-colors ${current === "light" ? "bg-white text-yellow-500 shadow-sm" : "text-neutral-600 dark:text-neutral-300 hover:bg-white/60 dark:hover:bg-neutral-800"}`}
+          className={`p-2 rounded-full transition-colors ${current === "light" && theme !== "system" ? "bg-white text-yellow-500 shadow-sm" : "text-neutral-600 dark:text-neutral-300 hover:bg-white/60 dark:hover:bg-neutral-800"}`}
         >
           <Sun size={16} />
         </button>
