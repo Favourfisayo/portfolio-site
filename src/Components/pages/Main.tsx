@@ -1,4 +1,3 @@
-import { ovo } from "@/fonts";
 import { motion } from "framer-motion";
 import DownloadResume from "@/Components/main/DownloadResume";
 import Image from "next/image";
@@ -6,7 +5,7 @@ import Image from "next/image";
 const Main = () => {
 
   return (
-    <main id="home" className={`${ovo.className} relative flex flex-col items-center px-4 py-8 gap-4`}>
+    <main id="home" className={` relative flex flex-col items-center px-4 py-8 gap-4`}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

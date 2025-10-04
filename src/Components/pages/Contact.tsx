@@ -1,5 +1,4 @@
 import { ArrowRight, Mail, User, MessageSquare } from "lucide-react"
-import { ovo, outfit } from "@/fonts"
 import { useState } from "react"
 import { BeatLoader } from "react-spinners"
 import { motion } from "framer-motion"
@@ -12,12 +11,12 @@ const Contact = () => {
 
   return (
     <section
-      className={`${ovo.className} flex flex-col items-center gap-10 px-4 py-12`}
+      className={` flex flex-col items-center gap-10 px-4 py-12`}
       id="contact"
     >
       <Header/>
       <motion.form
-        className={`${outfit.className} flex flex-col items-center gap-8 w-full max-w-[727px]`}
+        className={` flex flex-col items-center gap-8 w-full max-w-[727px]`}
         aria-label="Contact form"
         onSubmit={(e) => emailSubmitHandler(e, setLoading)}
         variants={containerVariants}

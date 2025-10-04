@@ -1,5 +1,4 @@
 "use client";
-import { outfit, ovo } from "@/fonts";
 import Button from "@/Components/Button";
 import { useState } from "react";
 import { Menu, X, } from "lucide-react";
@@ -21,7 +20,7 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={`${outfit.className} sticky top-0 z-20 text-neutral-900 dark:text-neutral-100 bg-white/60 dark:bg-neutral-950/50 backdrop-blur-md border-b border-black/5 dark:border-white/10`}
+        className={`sticky top-0 z-20 text-neutral-900 dark:text-neutral-100 bg-white/60 dark:bg-neutral-950/50 backdrop-blur-md border-b border-black/5 dark:border-white/10`}
         variants={headerVariants}
         initial="hidden"
         animate="visible"
@@ -29,7 +28,7 @@ export default function Header() {
         <div className="w-full max-w-7xl mx-auto flex items-center h-16 sm:h-20 px-4">
           <Logo/>
           <motion.nav 
-            className={`${ovo.className} hidden lg:flex flex-1 justify-center`}
+            className={`hidden lg:flex flex-1 justify-center`}
             variants={navVariants}
           >
             <ul className="flex items-center gap-8 px-6 h-12 rounded-full text-base font-normal leading-[100%]">

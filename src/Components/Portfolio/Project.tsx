@@ -1,6 +1,5 @@
 import { PortfolioProject } from "@/data/portfolio/projects"
 import { cardVariants, techItemVariants, techVariants } from "@/data/portfolio/variants"
-import { outfit } from "@/fonts"
 import clsx from "clsx"
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
@@ -141,7 +140,7 @@ export default function Project({project, index}: {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 + 0.5 }}
             >
-              <div className={`${outfit.className} flex flex-col gap-1`}>
+              <div className={` flex flex-col gap-1`}>
                 <motion.div 
                   className='flex items-center gap-2'
                   initial={{ opacity: 0, x: -20 }}
@@ -185,7 +184,7 @@ export default function Project({project, index}: {
                         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#e0ff85] transition"
   
                       >
-                        <Icon title={tech.name} className={tech.className} /> 
+                        <Icon color="default" title={tech.name} size={20} /> 
                       </motion.div>
                       <motion.span 
                         className="absolute top-[-2.2rem] left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-black text-white text-xs  pointer-events-none whitespace-nowrap z-30"

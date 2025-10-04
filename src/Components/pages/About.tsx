@@ -1,11 +1,10 @@
-import { outfit, ovo } from "@/fonts"
 import {motion} from "framer-motion"
 import { tools } from "@/data/about/tools"
 import { aboutMeData } from "@/data/about/about"
 
 const About = () => {
   return (
-    <section id="about" className={`${ovo.className} flex flex-col items-center gap-10 px-4 py-12`}>
+    <section id="about" className={`flex flex-col items-center gap-10 px-4 py-12`}>
         <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -37,9 +36,8 @@ const About = () => {
         My goal is to grow into a well-rounded developer who can build impactful, scalable software
     </motion.p>
 
-      {/* About Cards */}
       <motion.div
-        className={`${outfit.className} flex flex-wrap gap-4`}
+        className={` flex flex-wrap gap-4`}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

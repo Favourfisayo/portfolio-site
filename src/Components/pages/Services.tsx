@@ -1,4 +1,3 @@
-import { ovo } from '@/fonts'
 import {motion} from "framer-motion"
 import { useState } from "react"
 import { servicesData } from '@/data/services/services'
@@ -18,7 +17,7 @@ const Services = () => {
   return (
     <motion.section 
     id='services'
-      className={`${ovo.className} flex flex-col items-center gap-10 px-4 py-12`}
+      className={`flex flex-col items-center gap-10 px-4 py-12`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}

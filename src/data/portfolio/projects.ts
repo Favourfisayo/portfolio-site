@@ -5,18 +5,18 @@ import {
   SiTypescript, 
   SiTailwindcss, 
   SiReactrouter,
-  SiFigma,
-  SiFramer,
   SiLangchain,
   SiGooglegemini,
-  SiRedis
-} from "react-icons/si"
-import type { ComponentType } from "react"
-
-export type TechIconComponent = ComponentType<{ title?: string; className?: string }>
+  SiRedis,
+  SiFastapi,
+  SiPrisma,
+  SiShadcnui,
+  SiPytorch
+} from "@icons-pack/react-simple-icons"
+import { IconType } from "@icons-pack/react-simple-icons";
 
 export type ProjectTech = {
-  icon: TechIconComponent
+  icon: IconType
   name: string
   className?: string
 }
@@ -36,47 +36,48 @@ export const portfolioProjects: PortfolioProject[] = [
     name: "My Buddy",
     category: "A personalised learning plan generator powered by AI",
     status: "completed",
-    image: "https://res.cloudinary.com/dnyiepskw/image/upload/v1756903924/mybuddy_gvpy9e.png",
+    image: "/projects_images/mybuddy.png",
     github: "https://github.com/Favourfisayo/my-buddy",
     live: "https://my-buddy-liart.vercel.app/",
     tech: [
-      { icon: SiNextdotjs, name: "React", className: "text-[#61DAFB]" },
-      { icon: SiLangchain, name: "Langchain.js", className: "text-[#38BDF8]" },
-      { icon: SiSupabase, name: "Supabase", className: "text-[#3ECF8E]" },
-      { icon: SiGooglegemini, name: "Gemini", className: "text-[#38BDF8]" },
-      { icon: SiRedis, name: "Redis", className: "text-[#38BDF8]" },
-      { icon: SiTailwindcss, name: "Tailwind CSS", className: "text-[#38BDF8]" },
+      { icon: SiNextdotjs, name: "React" },
+      { icon: SiLangchain, name: "Langchain.js"},
+      { icon: SiSupabase, name: "Supabase" },
+      { icon: SiGooglegemini, name: "Gemini"},
+      { icon: SiRedis, name: "Redis"},
+      { icon: SiTailwindcss, name: "Tailwind CSS"},
+      { icon: SiShadcnui, name: "ShadCN UI"},
     ]
   },
     {
       name: "Markdown Magic",
       category: "A web app for markdown lovers with real-time collaboration!",
-      status: "completed",
-      image: "https://res.cloudinary.com/dnyiepskw/image/upload/v1753536744/1_wcwutn.png",
+      status: "paused",
+      image: "/projects_images/markdown-editor.png",
       github: "https://github.com/Favourfisayo/markdown-magic",
       live: "https://markdown-magic-sigma.vercel.app/",
       tech: [
-        { icon: SiReact, name: "React", className: "text-[#61DAFB]" },
-        { icon: SiSupabase, name: "Supabase", className: "text-[#3ECF8E]" },
-        { icon: SiTypescript, name: "TypeScript", className: "text-[#3178C6]" },
-        { icon: SiTailwindcss, name: "Tailwind CSS", className: "text-[#38BDF8]" },
-        { icon: SiReactrouter, name: "React Router", className: "text-[#CA4245]" }
+        { icon: SiReact, name: "React" },
+        { icon: SiSupabase, name: "Supabase" },
+        { icon: SiTypescript, name: "TypeScript"},
+        { icon: SiTailwindcss, name: "Tailwind CSS"},
+        { icon: SiReactrouter, name: "React Router"}
       ]
     },
     {
-      name: "Pharma Landing page",
-      category: "Figma AI-designed page recreated from scratch with React.",
+      name: "Form Helper",
+      category: "An AI/ML Powered application that allows users fill forms on the go with live audio.",
       status: "completed",
-      image: "https://res.cloudinary.com/dnyiepskw/image/upload/v1753539037/3_mmzjpu.png",
-      github: "https://github.com/Favourfisayo/pharma-landing-page",
-      live: "https://pharma-landing-page.vercel.app/",
+      image: "/projects_images/form-helper.png",
+      github: "https://github.com/Favourfisayo/formhelper",
+      live: "https://formhelper.vercel.app/",
       tech: [
-        { icon: SiReact, name: "React", className: "text-[#61DAFB]" },
-        { icon: SiTypescript, name: "TypeScript", className: "text-[#3178C6]" },
-        { icon: SiTailwindcss, name: "Tailwind CSS", className: "text-[#38BDF8]" },
-        { icon: SiFigma, name: "Figma", className: "text-[#F24E1E]" },
-        { icon: SiFramer, name: "Framer", className: "text-[#0055FF]" },
-        
+        { icon: SiNextdotjs, name: "Nextjs"},
+        { icon: SiFastapi, name: "FastAPI"},
+        { icon: SiPrisma, name: "Prisma"},
+        { icon: SiGooglegemini, name: "Google's Gemini APIs"},
+        { icon: SiRedis, name: "Redis"},
+        { icon: SiPytorch, name: "Pytorch"},
       ]
     }
   ]

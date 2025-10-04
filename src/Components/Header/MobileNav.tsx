@@ -1,5 +1,4 @@
 import { navLinks } from "@/data/header/navlinks";
-import { ovo } from "@/fonts";
 import Button from "../Button";
 import { ArrowRight, X } from "lucide-react";
 import ThemeToggle from "@/Components/ThemeToggle";
@@ -10,7 +9,7 @@ export default function MobileNav({toggleMobileMenu}: {
         <>
          <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={toggleMobileMenu}>
             <div
-              className={`${ovo.className} fixed top-0 left-0 right-0 shadow-lg z-50 backdrop-blur-md bg-white/70 dark:bg-neutral-900/60 border-b border-black/5 dark:border-white/10`}
+              className={` fixed top-0 left-0 right-0 shadow-lg z-50 backdrop-blur-md bg-white/70 dark:bg-neutral-900/60 border-b border-black/5 dark:border-white/10`}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="px-6 py-4">

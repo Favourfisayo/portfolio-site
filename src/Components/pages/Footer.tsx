@@ -30,13 +30,13 @@ const Footer = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.05 }}
         >
+          <motion.a href="tel:08050702092" className="text-base sm:text-lg">Give me a Call</motion.a>
           <motion.div
             whileHover={{ rotate: 10, scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
             <Phone size={24} strokeWidth={1}/>
           </motion.div>
-          <motion.p className=" text-base sm:text-lg">+234-909312175</motion.p>
         </motion.div>
       </motion.div>
 

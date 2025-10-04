@@ -1,5 +1,4 @@
 import { servicesData } from "@/data/services/services"
-import { outfit } from "@/fonts"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 
@@ -10,7 +9,7 @@ export default function ServicesMain({expandedCards, toggleExpanded}: {
     return (
         <>
     <motion.div 
-        className={`${outfit.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-screen-lg auto-rows-auto items-start`}
+        className={` grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-screen-lg auto-rows-auto items-start`}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

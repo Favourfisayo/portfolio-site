@@ -4,7 +4,9 @@ import {
   siGithub, siOpenai, siSupabase, siPostgresql,
   siC, siPython, SimpleIcon,
   siLangchain,
-  siPrisma
+  siPrisma,
+  siGooglegemini,
+  siGithubcopilot
 } from "simple-icons"
 
 export type ToolIcon = SimpleIcon
@@ -64,6 +66,23 @@ export const tools: ToolCategory[] = [
         },
       ]
     },
+        {
+      category: "AI",
+      tools: [
+        {
+          name: "OpenAI",
+          icon: siOpenai
+        },
+        {
+          name: "Gemini",
+          icon: siGooglegemini
+        },
+        {
+          name: "Copilot",
+          icon: siGithubcopilot
+        },
+      ]
+    },
 
     {
       category: "Tools",
@@ -75,10 +94,6 @@ export const tools: ToolCategory[] = [
         {
           name: "Github",
           icon: siGithub
-        },
-        {
-          name: "OpenAI",
-          icon: siOpenai
         },
       ]
     },

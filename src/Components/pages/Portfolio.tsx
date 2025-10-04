@@ -1,4 +1,3 @@
-import { ovo } from '@/fonts'
 import Button from '@/Components/Button'
 import { ArrowRight } from 'lucide-react'
 import {motion} from "framer-motion"
@@ -10,7 +9,7 @@ import Header from '../Portfolio/Header'
 const Portfolio = () => {
 
   return (
-    <section id="portfolio" className={`${ovo.className} flex flex-col items-center gap-10 px-4 py-12`}>
+    <section id="portfolio" className={`flex flex-col items-center gap-10 px-4 py-12`}>
       <Header/>
       <motion.div
         className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-lg justify-items-center'

@@ -14,8 +14,13 @@ export const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>  {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, email, message }),
   });
-
-return res
+    if (!res.ok) {
+        const error = await res.json();
+        toast.error(
+          `Failed to send message ${res.status} ${res.statusText}: ${error.message}`,
+        );
+      }
+    return res
 }
 
 export const emailSubmitHandler = async (e: React.FormEvent<HTMLFormElement>, setLoading: React.Dispatch<SetStateAction<boolean>>) => {
@@ -24,10 +29,10 @@ export const emailSubmitHandler = async (e: React.FormEvent<HTMLFormElement>, se
   try {
     const res = await handleSubmit(e)
     if(res && res.ok) {
-      toast.success("Message sent successfully, I'll get back soon :)")
+      const APIResponse = await res.json()
+      toast.success(APIResponse.message)
     }
   } catch (error) {
-    toast.error("Failed to send message :(")
     console.error(error)
     e.currentTarget.reset()
   } finally {

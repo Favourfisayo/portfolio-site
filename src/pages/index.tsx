@@ -6,11 +6,11 @@ import Portfolio from '@/Components/pages/Portfolio';
 import Contact from '@/Components/pages/Contact';
 import Footer from '@/Components/pages/Footer';
 import Head from 'next/head';
+import { outfit } from '@/fonts';
 
 export default function Home() {
   return (
     <>
-    {/* SEO OPTIMIZATIONS */}
     <Head>
         <title>My Portfolio</title>
         <meta name="description" content="Favour Fisayo's portfolio website" />
@@ -20,7 +20,7 @@ export default function Home() {
         <meta property="og:description" content="Check out my projects and experience" />
         <meta property="og:type" content="website" />
       </Head>
-    <main className="flex flex-col gap-20  ">
+    <main className={`flex flex-col gap-20 ${outfit.className} `}>
     <Header/>
     <Main/>
     <About/>
